@@ -17,6 +17,7 @@ O site é **100% estático**: HTML5 semântico, CSS e JavaScript puro. Não há 
 ├── sitemap.xml           Com alternates hreflang
 └── assets/
     ├── css/main.css      Todo o estilo; tokens de design no topo (variáveis CSS)
+    ├── css/psychedelic.css  Camada opcional de efeitos psicodélicos leves (cores e rolagem)
     ├── js/main.js        Melhorias progressivas (tema, idioma, navegação, vídeo)
     ├── fonts/            Inter e Manrope (woff2, subset latin) + licenças OFL
     ├── icons/            icons.svg (sprite) e apple-touch-icon.png
@@ -98,6 +99,21 @@ Todos os tokens ficam no início de `assets/css/main.css`, em `:root`:
 - **Espaçamento e forma:** `--space-*`, `--radius`, `--measure` (largura de leitura), `--container`.
 
 O favicon (`favicon.svg`) e o `apple-touch-icon.png` usam a mesma cor de destaque; a imagem `og-image.jpg` (1200×630) foi gerada a partir do retrato, com o nome em Manrope e o restante do texto em Inter.
+
+### Camada psicodélica (`assets/css/psychedelic.css`)
+
+Um arquivo separado, carregado depois de `main.css` em todas as páginas, acrescenta um toque psicodélico leve, só em CSS (sem JavaScript):
+
+- manchas de cor suaves no fundo, que giram e mudam de tom conforme a rolagem;
+- barra de progresso de rolagem com gradiente de arco-íris no topo;
+- gradiente iridescente no nome e nos títulos de seção, que desliza com a rolagem;
+- anel colorido em volta do retrato, que gira na primeira tela;
+- cartões que sobem de leve ao entrar na tela e ganham uma borda iridescente quando estão no meio dela;
+- uma leve lavagem de cor na seção de música e sublinhado ondulado nos links ao passar o mouse.
+
+Os efeitos de rolagem usam `animation-timeline: scroll()` / `view()` dentro de `@supports`; navegadores sem suporte ficam com o visual estático. Os tokens `--psy-*` no início do arquivo definem as cores (com `light-dark()`, para os dois temas); as cores de texto do gradiente mantêm contraste mínimo de 4,5:1. Para suavizar, reduza a opacidade das cores `--psy-blob*` ou os ângulos dos `@keyframes`; para desligar tudo, basta remover a linha `<link rel="stylesheet" href="…/psychedelic.css">` das quatro páginas.
+
+Com `prefers-reduced-motion: reduce`, nenhum movimento é aplicado (a barra de progresso some e o resto fica estático, só com as cores). Na impressão o arquivo não tem efeito (tudo fica dentro de `@media screen`), e no modo de alto contraste do Windows (`forced-colors`) as camadas decorativas são removidas.
 
 ### Tema claro/escuro
 

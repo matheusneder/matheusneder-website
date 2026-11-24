@@ -1,0 +1,254 @@
+/* ==========================================================================
+   matheusneder.com: psychedelic layer (optional)
+   A light psychedelic touch on top of main.css. Loaded after it on every
+   page; remove the <link> to psychedelic.css to turn all of it off.
+
+   1. Tokens  2. Static look  3. Motion (scroll-driven)  4. Forced colours
+
+   - Everything is screen-only, so print keeps the plain main.css styles.
+   - Decorative layers use pointer-events: none and sit behind the content.
+   - Motion only runs with prefers-reduced-motion: no-preference. Scroll-
+     driven parts also need animation-timeline support; other browsers keep
+     the static look.
+   - Gradient text stops each keep >= 4.5:1 against --c-bg and --c-surface
+     in both themes, although they are only used on large headings.
+   - Only transform, opacity, filter and background-position are animated.
+   ========================================================================== */
+
+@media screen {
+
+  /* 1. Tokens ---------------------------------------------------------------
+     Light value first, dark value second, same as main.css.                  */
+  :root {
+    /* Text gradient stops (headings) */
+    --psy-t1: light-dark(#1f5f5b, #7fc4ba);
+    --psy-t2: light-dark(#34509c, #9fb4ff);
+    --psy-t3: light-dark(#6a3ea6, #cfa8f7);
+    --psy-t4: light-dark(#962e66, #f3a3c6);
+
+    /* Decorative colours (rings, bar, blobs): not used for text */
+    --psy-d1: light-dark(#2a9d8f, #7fc4ba);
+    --psy-d2: light-dark(#6c63ff, #a3a8ff);
+    --psy-d3: light-dark(#d6409f, #f08ccf);
+    --psy-d4: light-dark(#f4a259, #f6c177);
+
+    --psy-blob1: light-dark(rgb(42 157 143 / 0.15), rgb(127 196 186 / 0.10));
+    --psy-blob2: light-dark(rgb(108 99 255 / 0.11), rgb(140 120 255 / 0.12));
+    --psy-blob3: light-dark(rgb(214 64 159 / 0.09), rgb(230 90 180 / 0.08));
+    --psy-blob4: light-dark(rgb(244 162 89 / 0.12), rgb(246 193 119 / 0.06));
+
+    --psy-rainbow: linear-gradient(90deg, var(--psy-d1), var(--psy-d2), var(--psy-d3), var(--psy-d4), var(--psy-d1));
+  }
+
+  @property --psy-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0deg;
+  }
+  @property --psy-p {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
+  }
+
+  /* 2. Static look ----------------------------------------------------------- */
+
+  /* Soft colour blobs behind the whole page */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: -20vmax;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(closest-side at 18% 22%, var(--psy-blob1), transparent),
+      radial-gradient(closest-side at 82% 18%, var(--psy-blob2), transparent),
+      radial-gradient(closest-side at 70% 78%, var(--psy-blob3), transparent),
+      radial-gradient(closest-side at 24% 82%, var(--psy-blob4), transparent);
+    background-size: 70% 70%, 65% 65%, 70% 70%, 60% 60%;
+    background-repeat: no-repeat;
+    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  }
+
+  /* Scroll progress bar (only visible where scroll-driven animations work) */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 60;
+    height: 3px;
+    pointer-events: none;
+    background: var(--psy-rainbow);
+    transform-origin: 0 50%;
+    transform: scaleX(0);
+    display: none;
+  }
+
+  /* Iridescent name and section headings (large text only) */
+  @supports (background-clip: text) or (-webkit-background-clip: text) {
+    h1, .section-head h2 {
+      background-image: linear-gradient(100deg, var(--psy-t1), var(--psy-t2), var(--psy-t3), var(--psy-t4), var(--psy-t1));
+      background-size: 250% 100%;
+      background-position: 0% 50%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      /* Keeps descenders inside the painted box */
+      padding-bottom: 0.08em;
+      margin-bottom: -0.08em;
+    }
+  }
+
+  /* Iridescent ring around the portrait */
+  .hero-portrait {
+    padding: 4px;
+    background: conic-gradient(from var(--psy-angle), var(--psy-d1), var(--psy-d2), var(--psy-d3), var(--psy-d4), var(--psy-d1));
+  }
+  .hero-portrait img { border-radius: 50%; }
+
+  /* Faint colour wash in the Music section */
+  .section-personal { position: relative; isolation: isolate; }
+  .section-personal::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(closest-side at 12% 30%, var(--psy-blob2), transparent 100%),
+      radial-gradient(closest-side at 88% 70%, var(--psy-blob3), transparent 100%),
+      radial-gradient(closest-side at 50% 110%, var(--psy-blob1), transparent 100%);
+    background-size: 60% 90%, 60% 90%, 80% 70%;
+    background-repeat: no-repeat;
+    background-position: 0 0, 100% 100%, 50% 100%;
+  }
+
+  /* Wavy underline on hovered text links */
+  a:hover { text-decoration-style: wavy; text-decoration-thickness: 1px; }
+
+  ::selection {
+    background: light-dark(#e6dcff, #45306a);
+    color: var(--c-text);
+  }
+
+  /* Iridescent border ring on cards (fades in while the card is mid-screen) */
+  .card, .about-aside { position: relative; }
+  .card::before, .link-item::before, .about-aside::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    padding: 1px;
+    border-radius: inherit;
+    pointer-events: none;
+    background: var(--psy-rainbow);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+    opacity: 0;
+  }
+
+  /* 3. Motion ---------------------------------------------------------------- */
+  @media (prefers-reduced-motion: no-preference) {
+
+    /* Very slow hue drift of the background blobs (one swing every 40 s) */
+    body::before { animation: psy-hue 40s ease-in-out infinite alternate; }
+
+    @supports (animation-timeline: scroll()) {
+
+      /* Blobs turn and drift as the page scrolls */
+      body::before {
+        animation: psy-hue 40s ease-in-out infinite alternate, psy-drift linear both;
+        animation-timeline: auto, scroll(root);
+      }
+
+      /* Progress bar */
+      body::after {
+        display: block;
+        animation: psy-progress linear both;
+        animation-timeline: scroll(root);
+      }
+
+      /* Hero: portrait ring turns and the name shifts colour during the first screen */
+      .hero {
+        animation: psy-turn linear both;
+        animation-timeline: scroll(root);
+        animation-range: 0 100vh;
+      }
+      .hero h1 {
+        background-position: calc(var(--psy-p) * 100%) 50%;
+      }
+
+      /* Section headings shift colour as they cross the viewport */
+      .section-head h2 {
+        animation: psy-sheen linear both;
+        animation-timeline: view();
+        animation-range: cover 0% cover 100%;
+      }
+
+      /* Headings and cards float in gently (transform only: text stays opaque) */
+      .section-head, .card, .link-item, .about-aside, .degree, .music-text, .video {
+        animation: psy-rise linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 70%;
+      }
+
+      /* Card rings glow while the card is mid-screen, changing hue as it moves */
+      .card::before, .link-item::before, .about-aside::before {
+        animation: psy-glow linear both;
+        animation-timeline: view();
+        animation-range: cover 10% cover 90%;
+      }
+
+      /* Music wash shifts hue as the section scrolls by */
+      .section-personal::before {
+        animation: psy-wash linear both;
+        animation-timeline: view();
+        animation-range: cover 0% cover 100%;
+      }
+    }
+  }
+
+  @keyframes psy-hue {
+    from { filter: hue-rotate(0deg); }
+    to   { filter: hue-rotate(50deg); }
+  }
+  @keyframes psy-drift {
+    from { transform: rotate(0deg) scale(1); }
+    to   { transform: rotate(40deg) scale(1.12) translateY(-4%); }
+  }
+  @keyframes psy-progress {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+  @keyframes psy-turn {
+    from { --psy-angle: 0deg;   --psy-p: 0; }
+    to   { --psy-angle: 360deg; --psy-p: 1; }
+  }
+  @keyframes psy-sheen {
+    from { background-position: 0% 50%; }
+    to   { background-position: 100% 50%; }
+  }
+  @keyframes psy-rise {
+    from { transform: translateY(1.25rem); }
+    to   { transform: none; }
+  }
+  @keyframes psy-glow {
+    0%   { opacity: 0; filter: hue-rotate(0deg); }
+    40%  { opacity: 0.9; }
+    60%  { opacity: 0.9; }
+    100% { opacity: 0; filter: hue-rotate(120deg); }
+  }
+  @keyframes psy-wash {
+    from { filter: hue-rotate(-40deg); }
+    to   { filter: hue-rotate(40deg); }
+  }
+
+  /* 4. Forced colours (Windows High Contrast): back to plain system colours */
+  @media (forced-colors: active) {
+    body::before, body::after, .section-personal::before,
+    .card::before, .link-item::before, .about-aside::before { display: none; }
+    h1, .section-head h2 { background: none; color: CanvasText; -webkit-text-fill-color: currentColor; }
+    .hero-portrait { background: none; padding: 0; }
+  }
+}
