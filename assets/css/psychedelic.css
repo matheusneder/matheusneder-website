@@ -50,6 +50,12 @@
     inherits: true;
     initial-value: 0;
   }
+  /* Hue offset in degrees (a plain number, as relative colour syntax needs) */
+  @property --psy-hue {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
+  }
 
   /* 2. Static look ----------------------------------------------------------- */
 
@@ -169,6 +175,25 @@
         animation-timeline: scroll(root);
       }
 
+      /* Accent and text colours drift in hue over the whole page.
+         The base values are read from main.css on <html> and rewritten on
+         <body>, so main.css stays the single source of the palette.
+         Accent: same lightness and chroma, hue turns up to 50 degrees.
+         Text: barely tinted (chroma +0.006) with a hue that follows it.
+         Checked: accent >= 6.3:1 and text >= 12:1 on every background.     */
+      @supports (color: oklch(from red l c h)) {
+        :root {
+          --psy-accent-base: var(--c-accent);
+          --psy-text-base: var(--c-text);
+          animation: psy-hue-shift linear both;
+          animation-timeline: scroll(root);
+        }
+        body {
+          --c-accent: oklch(from var(--psy-accent-base) l c calc(h + var(--psy-hue)));
+          --c-text: oklch(from var(--psy-text-base) l calc(c + 0.006) calc(190 + var(--psy-hue)));
+        }
+      }
+
       /* Hero: portrait ring turns and the name shifts colour during the first screen */
       .hero {
         animation: psy-turn linear both;
@@ -212,6 +237,10 @@
   @keyframes psy-hue {
     from { filter: hue-rotate(0deg); }
     to   { filter: hue-rotate(50deg); }
+  }
+  @keyframes psy-hue-shift {
+    from { --psy-hue: 0; }
+    to   { --psy-hue: 50; }
   }
   @keyframes psy-drift {
     from { transform: rotate(0deg) scale(1); }
