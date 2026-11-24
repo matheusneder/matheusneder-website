@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matheus Neder — Software Engineering &amp; Solutions Architecture</title>
+  <meta name="description" content="Computer engineer with 20+ years of experience in software development, solutions architecture, cloud and legacy modernization in the financial sector. Software Engineering Specialist at TOTVS.">
+  <meta name="author" content="Matheus Neder">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121416" media="(prefers-color-scheme: dark)">
+
+  <link rel="canonical" href="https://matheusneder.com/en/">
+  <link rel="alternate" hreflang="pt-BR" href="https://matheusneder.com/pt-br/">
+  <link rel="alternate" hreflang="en" href="https://matheusneder.com/en/">
+  <link rel="alternate" hreflang="x-default" href="https://matheusneder.com/">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Matheus Neder">
+  <meta property="og:title" content="Matheus Neder — Software Engineering &amp; Solutions Architecture">
+  <meta property="og:description" content="20+ years in software development, solutions architecture, cloud and legacy modernization.">
+  <meta property="og:url" content="https://matheusneder.com/en/">
+  <meta property="og:image" content="https://matheusneder.com/assets/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Matheus Neder — Software Engineering, Solutions Architecture, Cloud">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="pt_BR">
+  <meta property="profile:first_name" content="Matheus">
+  <meta property="profile:last_name" content="Neder">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="preload" href="../assets/fonts/inter-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/source-serif-4-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+  <script src="../assets/js/main.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://matheusneder.com/#website",
+        "url": "https://matheusneder.com/",
+        "name": "Matheus Neder",
+        "inLanguage": ["pt-BR", "en"],
+        "publisher": { "@id": "https://matheusneder.com/#person" }
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://matheusneder.com/en/#profilepage",
+        "url": "https://matheusneder.com/en/",
+        "name": "Matheus Neder — Software Engineering & Solutions Architecture",
+        "inLanguage": "en",
+        "isPartOf": { "@id": "https://matheusneder.com/#website" },
+        "mainEntity": { "@id": "https://matheusneder.com/#person" },
+        "dateModified": "2026-11-24"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://matheusneder.com/#person",
+        "name": "Matheus Neder",
+        "alternateName": "Matheus Villela Neder Issa",
+        "url": "https://matheusneder.com/",
+        "image": "https://matheusneder.com/assets/images/matheus-neder-portrait.webp",
+        "jobTitle": "Software Engineering Specialist",
+        "worksFor": { "@type": "Organization", "name": "TOTVS", "url": "https://www.totvs.com/" },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Pontifical Catholic University of Minas Gerais",
+          "alternateName": "PUC Minas"
+        },
+        "hasOccupation": {
+          "@type": "Occupation",
+          "name": "Software engineer and solutions architect",
+          "skills": "Software architecture, distributed systems, cloud computing, Kubernetes, Kafka, .NET, Go, Java, legacy modernization, AI applied to software engineering"
+        },
+        "knowsAbout": [
+          "Software engineering", "Solutions architecture", "Distributed systems",
+          "Event-driven architecture", "Cloud computing", "Amazon Web Services",
+          "Google Cloud Platform", "Microsoft Azure", "Kubernetes", "Apache Kafka", "Terraform",
+          "DevOps", "Legacy system modernization", ".NET", "C#", "Go", "Java", "Python",
+          "Databases", "AI applied to software engineering"
+        ],
+        "knowsLanguage": ["pt-BR", "en"],
+        "award": [
+          "ACM ICPC — Brazilian National Finals (2009)",
+          "Academic Excellence Award — Computer Engineering, PUC Minas (2008 and 2011)"
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/in/matheus-neder-66b16a16/",
+          "https://github.com/matheusneder",
+          "https://open.spotify.com/artist/2ZB9z4Bkj3iEiXHX3ApvSk"
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="#top">Matheus Neder</a>
+      <nav class="site-nav" aria-label="Sections">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#expertise">Expertise</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-tools">
+        <nav class="lang-switch" aria-label="Language">
+          <a href="../pt-br/" hreflang="pt-BR" lang="pt-BR" data-set-lang="pt-br"><abbr title="Português" aria-hidden="true">PT</abbr><span class="visually-hidden">Português</span></a>
+          <a href="../en/" hreflang="en" lang="en" aria-current="page" data-set-lang="en"><abbr title="English" aria-hidden="true">EN</abbr><span class="visually-hidden">English</span></a>
+        </nav>
+        <button class="theme-toggle" type="button" hidden data-label-dark="Switch to dark theme" data-label-light="Switch to light theme" aria-label="Toggle theme">
+          <svg class="icon icon-sun" aria-hidden="true"><use href="../assets/icons/icons.svg#sun"/></svg>
+          <svg class="icon icon-moon" aria-hidden="true"><use href="../assets/icons/icons.svg#moon"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+    <!-- Hero ------------------------------------------------------------- -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-text">
+          <p class="eyebrow">Software engineering · Solutions architecture · Cloud</p>
+          <h1 id="hero-title">Matheus Neder</h1>
+          <p class="role">Software Engineering Specialist <span>at TOTVS</span></p>
+          <p class="lead">Computer engineer with more than 20 years of experience building software and shaping architectures — from modernizing legacy systems at major banks to applying artificial intelligence to software engineering.</p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Get in touch</a>
+            <a class="btn btn-ghost" href="#experience">View experience</a>
+            <ul class="icon-links">
+              <li><a href="https://www.linkedin.com/in/matheus-neder-66b16a16/" rel="me noopener" target="_blank" aria-label="LinkedIn (opens in a new tab)" title="LinkedIn"><svg class="icon" aria-hidden="true"><use href="../assets/icons/icons.svg#linkedin"/></svg></a></li>
+              <li><a href="https://github.com/matheusneder" rel="me noopener" target="_blank" aria-label="GitHub (opens in a new tab)" title="GitHub"><svg class="icon" aria-hidden="true"><use href="../assets/icons/icons.svg#github"/></svg></a></li>
+              <li><a href="mailto:matheusneder@gmail.com" aria-label="Email: matheusneder@gmail.com" title="Email"><svg class="icon" aria-hidden="true"><use href="../assets/icons/icons.svg#mail"/></svg></a></li>
+            </ul>
+          </div>
+
+          <dl class="facts">
+            <div><dt>Experience</dt><dd>20+ years in software and infrastructure</dd></div>
+            <div><dt>Financial sector</dt><dd>Itaú Unibanco, Santander (Olé Consignado) and Banco Mercantil</dd></div>
+            <div><dt>Cloud</dt><dd>AWS, GCP and Azure</dd></div>
+          </dl>
+        </div>
+
+        <figure class="hero-portrait">
+          <img src="../assets/images/matheus-neder-portrait.webp"
+               srcset="../assets/images/matheus-neder-portrait-240.webp 240w, ../assets/images/matheus-neder-portrait.webp 460w"
+               sizes="(max-width: 44rem) 136px, 280px"
+               width="460" height="460" alt="Portrait of Matheus Neder" fetchpriority="high">
+        </figure>
+      </div>
+    </section>
+
+    <!-- About ------------------------------------------------------------ -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">About</p>
+          <h2 id="about-title">Technical depth with a business perspective</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>I'm a computer engineer, graduated from PUC Minas in Brazil, and I've been working in technology since 2003, when I started out as a freelance web developer and Linux systems administrator. Since then I've moved through product development, solutions architecture and software engineering — much of that time in financial institutions, where reliability, security and governance are not optional.</p>
+            <p>As an architect, I defined the architecture models for moving mainframe-based ecosystems to cloud-native applications, using hybrid architectures that allow a gradual migration without disrupting operations. I was also part of the rollout of one of the first on-premises Kubernetes clusters in Belo Horizonte, and of the redesign of services around an event-driven architecture on Apache Kafka.</p>
+            <p>Today, at TOTVS, I build a component that translates SQL statements at runtime, with the help of artificial intelligence, so that applications written for Microsoft SQL Server can also run on Oracle Database and PostgreSQL. I also contribute to the operations of TOTVS Cloud.</p>
+            <p>I aim to balance performance, scalability, interoperability and cost, and I give the same care to routine and urgent day-to-day problems. I work well in cross-functional, distributed teams, where technical leadership, mentoring and guidance on good practices are a natural part of the job.</p>
+          </div>
+          <aside class="about-aside" aria-labelledby="focus-title">
+            <h3 id="focus-title">Focus areas</h3>
+            <ul>
+              <li>Solutions architecture and legacy modernization</li>
+              <li>Distributed systems and event-driven architectures</li>
+              <li>Cloud (AWS, GCP, Azure), Kubernetes and infrastructure as code</li>
+              <li>Artificial intelligence applied to software engineering</li>
+              <li>Engineering practices: DDD, TDD and, more recently, SDD</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience ------------------------------------------------------- -->
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Professional experience</p>
+          <h2 id="experience-title">Career</h2>
+        </div>
+
+        <ol class="timeline">
+          <li class="job">
+            <p class="job-period"><time datetime="2024">2024</time> – present</p>
+            <div class="job-body">
+              <div class="job-head">
+                <h3>Software Engineering Specialist</h3>
+                <p class="job-org">TOTVS · TOTVS Cloud</p>
+              </div>
+              <p>Took a component from concept to delivery that interprets, translates and rewrites SQL statements at runtime, enabling applications originally built for Microsoft SQL Server to also run on Oracle Database and PostgreSQL.</p>
+              <ul>
+                <li><strong>AI-assisted SQL translation:</strong> artificial intelligence rewrites statements adaptively, respecting the syntax and semantics of each database and handling complex cases more effectively than approaches based solely on fixed rules.</li>
+                <li><strong>Compatibility preserved:</strong> performance and compatibility maintained for existing customizations, whether built in-house, by customers or by partners.</li>
+                <li><strong>Product impact:</strong> part of TOTVS's strategy to make its products more flexible and give customers cost-optimized infrastructure options.</li>
+                <li><strong>TOTVS Cloud operations:</strong> availability, performance and reliability of infrastructure and services, supporting fast resolution of incidents and critical customer requests.</li>
+              </ul>
+              <ul class="tags">
+                <li>SQL Server</li><li>Oracle Database</li><li>PostgreSQL</li><li>Applied AI</li><li>Networking</li><li>Cloud operations</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="job">
+            <p class="job-period"><time datetime="2021">2021</time> – <time datetime="2024">2024</time></p>
+            <div class="job-body">
+              <div class="job-head">
+                <h3>Senior Solutions Architect</h3>
+                <p class="job-org">Banco Mercantil</p>
+              </div>
+              <p>Owned the architecture models for moving a mainframe-based legacy ecosystem to modern applications on public cloud, letting both generations of technology coexist so the migration could happen gradually and safely, without interrupting operations, in a critical and highly regulated environment.</p>
+              <ul>
+                <li>Hybrid architectures to support the transition from mainframe to cloud.</li>
+                <li>Adoption of open-source technologies to avoid vendor lock-in.</li>
+                <li>Standards and guidelines for cloud-native applications able to run on different providers; AWS and GCP were adopted during the transition.</li>
+                <li>Integration of legacy systems with new solutions, focusing on interoperability, resilience and loose coupling.</li>
+                <li>Technical support to business and development teams, aligning architecture with the organization's strategic goals.</li>
+              </ul>
+              <ul class="tags">
+                <li>Infrastructure as Code</li><li>Kubernetes</li><li>OpenTelemetry</li><li>CDC</li><li>Kafka</li><li>AWS</li><li>GCP</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="job">
+            <p class="job-period"><time datetime="2021-04">Apr 2021</time> – <time datetime="2021-10">Oct 2021</time></p>
+            <div class="job-body">
+              <div class="job-head">
+                <h3>Senior Solutions Architect</h3>
+                <p class="job-org">Itaú Unibanco</p>
+              </div>
+              <p>Fully remote role in the Solutions Architecture team while the bank was reorganizing around business lines, giving teams more autonomy over architecture decisions.</p>
+              <ul>
+                <li>Redesigned the architecture of the credit offering process, as part of a strategic initiative to replace mainframe legacy systems with scalable microservices designed for AWS.</li>
+                <li>Worked with multiple areas to ensure compliance with the organization's scalability, security and governance standards.</li>
+              </ul>
+              <ul class="tags">
+                <li>AWS</li><li>Microservices</li><li>Enterprise architecture</li><li>Mainframe modernization</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="job">
+            <p class="job-period"><time datetime="2017">2017</time> – <time datetime="2021">2021</time></p>
+            <div class="job-body">
+              <div class="job-head">
+                <h3>Solutions Architect</h3>
+                <p class="job-org">Banco Olé Consignado · Santander Brasil</p>
+              </div>
+              <p>Led the solutions architecture team at Olé Consignado, then a Santander subsidiary, driving the modernization of its technology infrastructure and the technical decisions of its payroll-loan business.</p>
+              <ul>
+                <li><strong>Private cloud and microservices:</strong> rollout and adoption of one of the first on-premises Kubernetes clusters in Belo Horizonte, enabling microservice-based applications and DevOps practices.</li>
+                <li><strong>Event-driven architecture:</strong> redesign of the bank's commission services with asynchronous messaging over Apache Kafka, improving scalability and traceability.</li>
+                <li><strong>Delivery quality:</strong> a development process built on systematic code reviews and automated tests with minimum coverage, reducing rework.</li>
+                <li><strong>Knowledge sharing:</strong> internal training sessions and talks on software engineering, architecture and DevOps.</li>
+              </ul>
+              <ul class="tags">
+                <li>Kubernetes</li><li>Apache Kafka</li><li>.NET</li><li>DevOps</li><li>Microservices</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="job">
+            <p class="job-period"><time datetime="2013">2013</time> – <time datetime="2017">2017</time></p>
+            <div class="job-body">
+              <div class="job-head">
+                <h3>Software Developer</h3>
+                <p class="job-org">WebAula (now UOL Edtech)</p>
+              </div>
+              <p>Maintained and evolved the WebAula LMS, recognized as Brazil's largest e-learning platform until 2017, on projects focused on mobile access, performance and scalability.</p>
+              <ul>
+                <li><strong>Learning Paths:</strong> led the creation of the module — architecture, data modeling and development — and trained the team on the new technologies.</li>
+                <li><strong>Cloud Studio HTML5 player:</strong> in-browser multimedia playback for the course authoring tool.</li>
+                <li><strong>Mobile:</strong> redesign of the Android and iOS apps and adaptation of the assessment tool for mobile devices.</li>
+                <li><strong>Search:</strong> indexing service for the Q&amp;A module using Apache Solr.</li>
+                <li><strong>Reliability:</strong> automated publishing of internal libraries, memory-leak fixes and performance tuning.</li>
+              </ul>
+              <ul class="tags">
+                <li>C# / .NET</li><li>Xamarin</li><li>HTML5</li><li>Apache Solr</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+
+        <div class="early-career">
+          <h3>Early career</h3>
+          <ul class="early-list">
+            <li>
+              <p class="job-period"><time datetime="2012">2012</time> – <time datetime="2013">2013</time></p>
+              <div>
+                <h4>Intern · CONAB – Brazilian National Supply Company</h4>
+              </div>
+            </li>
+            <li>
+              <p class="job-period"><time datetime="2007">2007</time> – <time datetime="2009">2009</time></p>
+              <div>
+                <h4>Software Developer · AHMG / Hospital Vila da Serra</h4>
+              </div>
+            </li>
+            <li>
+              <p class="job-period"><time datetime="2003">2003</time> – <time datetime="2009">2009</time></p>
+              <div>
+                <h4>Developer and systems administrator · Freelance</h4>
+                <p>Custom web solutions in PHP, MySQL and JavaScript for local businesses — including an online ordering system for Companhia Têxtil São-Joanense, online delivery of lab results for Laboratório Unimed São João del-Rei and a language proficiency assessment system for Cultura Inglesa São João del-Rei. Alongside that, I ran Linux hosting and email servers (Apache, Postfix, MySQL), automating backups and account provisioning and isolating environments with chroot jails.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expertise -------------------------------------------------------- -->
+    <section class="section" id="expertise" aria-labelledby="expertise-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Expertise</p>
+          <h2 id="expertise-title">Areas of expertise</h2>
+          <p>Grouped by the kind of problem they solve, with the technologies I've used in practice.</p>
+        </div>
+
+        <ul class="expertise-grid">
+          <li class="card">
+            <h3>Software and solutions architecture</h3>
+            <p>Hybrid architectures, resilient microservices, system integration and decisions that balance performance, scalability, interoperability and cost.</p>
+            <ul class="tags"><li>Microservices</li><li>DDD</li><li>Integration</li><li>Loose coupling</li></ul>
+          </li>
+          <li class="card">
+            <h3>Legacy modernization</h3>
+            <p>Moving mainframe-based ecosystems to the cloud, with old and new technology coexisting and a gradual migration that keeps operations running.</p>
+            <ul class="tags"><li>Mainframe → cloud</li><li>CDC</li><li>Hybrid architecture</li></ul>
+          </li>
+          <li class="card">
+            <h3>Distributed and event-driven systems</h3>
+            <p>Asynchronous messaging, event-driven architectures and traceability in business-critical environments.</p>
+            <ul class="tags"><li>Apache Kafka</li><li>RabbitMQ</li><li>OpenTelemetry</li></ul>
+          </li>
+          <li class="card">
+            <h3>Cloud, Kubernetes and DevOps</h3>
+            <p>Cloud-native applications that are portable across providers, infrastructure as code and container-based platforms.</p>
+            <ul class="tags"><li>AWS</li><li>GCP</li><li>Azure</li><li>Kubernetes</li><li>Docker</li><li>Terraform</li></ul>
+          </li>
+          <li class="card">
+            <h3>Databases and search</h3>
+            <p>Modeling, performance and interoperability across database engines — including SQL translation between SQL Server, Oracle and PostgreSQL.</p>
+            <ul class="tags"><li>SQL Server</li><li>PostgreSQL</li><li>Oracle</li><li>MySQL</li><li>Elasticsearch</li><li>Apache Solr</li></ul>
+          </li>
+          <li class="card">
+            <h3>AI applied to software engineering</h3>
+            <p>AI inside products, such as adaptive SQL rewriting, and in the development process itself, with spec-driven development.</p>
+            <ul class="tags"><li>Claude Code</li><li>Codex</li><li>Antigravity</li><li>JetBrains Junie</li><li>Spec-kit</li></ul>
+          </li>
+          <li class="card">
+            <h3>Programming languages</h3>
+            <p>Broad experience, from enterprise back ends to low-level systems.</p>
+            <ul class="tags"><li>C# / .NET</li><li>Java</li><li>Go</li><li>C / C++</li><li>Python</li><li>JavaScript</li></ul>
+          </li>
+          <li class="card">
+            <h3>Engineering practices and leadership</h3>
+            <p>Quality as a process: code review, automated testing, mentoring and technical guidance for teams.</p>
+            <ul class="tags"><li>TDD</li><li>DDD</li><li>SDD</li><li>Code review</li><li>Mentoring</li></ul>
+          </li>
+          <li class="card">
+            <h3>Linux and infrastructure</h3>
+            <p>A solid foundation in systems administration, networking, automation and service security.</p>
+            <ul class="tags"><li>GNU/Linux</li><li>Networking</li><li>Bash</li><li>Security</li></ul>
+          </li>
+        </ul>
+
+        <p class="also"><strong>I've also worked with:</strong> ASP.NET MVC and Web API, Entity Framework, NHibernate, Xamarin (iOS, Android and Forms), Android, Angular, Node.js, Clojure, PHP, Firebird, VB6/COM+, Win32, Boost, GTKmm and Arduino.</p>
+      </div>
+    </section>
+
+    <!-- Projects --------------------------------------------------------- -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Projects &amp; contributions</p>
+          <h2 id="projects-title">Open source, research and talks</h2>
+        </div>
+
+        <div class="subsection">
+          <h3>Open-source contributions</h3>
+          <ul class="link-list">
+            <li class="link-item">
+              <h4><a href="https://github.com/kubernetes/kubernetes/pull/87041" target="_blank" rel="noopener">Kubernetes — Fluentd add-on fix<svg class="icon" aria-hidden="true"><use href="../assets/icons/icons.svg#arrow-up-right"/></svg></a></h4>
+              <span class="meta">kubernetes/kubernetes · 2020</span>
+              <p>Fixed the <code>docker.log</code> format in the Fluentd add-on configuration. Pull request merged into the official project.</p>
+            </li>
+            <li class="link-item">
+              <h4><a href="https://github.com/kubernetes/website/pull/10320" target="_blank" rel="noopener">Kubernetes documentation — vsphereVolume section link<svg class="icon" aria-hidden="true"><use href="../assets/icons/icons.svg#arrow-up-right"/></svg></a></h4>
+              <span class="meta">kubernetes/website · 2018</span>
+              <p>Fixed an anchor link in the official documentation. Another documentation fix was merged the same year (<a href="https://github.com/kubernetes/website/pull/9564" target="_blank" rel="noopener">pull request #9564</a>).</p>
+            </li>
+            <li class="link-item">
+              <h4><a href="https://github.com/PrismLibrary/Prism/pull/1034" target="_blank" rel="noopener">Prism — ObservesProperty for complex types<svg class="icon" aria-hidden="true"><use href="../assets/icons/icons.svg#arrow-up-right"/></svg></a></h4>
+              <span class="meta">PrismLibrary/Prism · 2017</span>
+              <p>New capability in Prism's <code>DelegateCommand</code>, a .NET Foundation project: observing properties of complex types.</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="subsection">
+          <h3>Selected public repositories</h3>
+          <ul class="repo-grid">
+            <li class="link-item">
+              <h4><a href="https://github.com/matheusneder/Xamarin.Forms.ImagePicker" target="_blank" rel="noopener">Xamarin.Forms.ImagePicker<svg class="icon" aria-hidden="true"><use href="../assets/icons/icons.svg#arrow-up-right"/></svg></a></h4>
+              <p>Simple image picker with cropping for Xamarin.Forms.</p>
+              <span class="meta">C#</span>
+            </li>
+            <li class="link-item">
+              <h4><a href="https://github.com/matheusneder/helm-apply" target="_blank" rel="noopener">helm-apply<svg class="icon" aria-hidden="true"><use href="../assets/icons/icons.svg#arrow-up-right"/></svg></a></h4>
+              <p>Install and upgrade operations for Helm-based Kubernetes configuration.</p>
+              <span class="meta">Kubernetes · Helm</span>
+            </li>
+            <li class="link-item">
+              <h4><a href="https://github.com/matheusneder/maverick" target="_blank" rel="noopener">maverick<svg class="icon" aria-hidden="true"><use href="../assets/icons/icons.svg#arrow-up-right"/></svg></a></h4>
+              <p>An architecture template for .NET Core projects based on Hexagonal Architecture.</p>
+              <span class="meta">.NET · Architecture</span>
+            </li>
+            <li class="link-item">
+              <h4><a href="https://github.com/matheusneder/environmental-stressor" target="_blank" rel="noopener">environmental-stressor<svg class="icon" aria-hidden="true"><use href="../assets/icons/icons.svg#arrow-up-right"/></svg></a></h4>
+              <p>ASP.NET Core application for testing environments such as servers and clusters.</p>
+              <span class="meta">C# · ASP.NET Core</span>
+            </li>
+          </ul>
+          <p class="more-link"><a href="https://github.com/matheusneder" target="_blank" rel="noopener">All repositories on GitHub<svg class="icon" aria-hidden="true"><use href="../assets/icons/icons.svg#arrow-up-right"/></svg></a></p>
+        </div>
+
+        <div class="subsection">
+          <h3>Research and talks</h3>
+          <ul class="plain-list">
+            <li>
+              <span class="year">2018</span>
+              <div>
+                <h4 lang="pt-BR">Docker e Kubernetes: aprenda a conteinerizar e gerenciar seus aplicativos com as principais tecnologias do mercado</h4>
+                <p>Talk on containerizing and managing applications with Docker and Kubernetes, at Raja Valley Summit Tech (BHS/Axter), Brazil.</p>
+              </div>
+            </li>
+            <li>
+              <span class="year">2010–11</span>
+              <div>
+                <h4>Mobile learning for users with age-related limitations</h4>
+                <p>Undergraduate research at the PUC Minas Institute of Informatics: Android 1.6 apps for comparative usability evaluation. Presented at the 19th PUC Minas Undergraduate Research Seminar (2011).</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -------------------------------------------------------- -->
+    <section class="section" id="education" aria-labelledby="education-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Education</p>
+          <h2 id="education-title">Education and recognition</h2>
+        </div>
+
+        <div class="edu-grid">
+          <div>
+            <h3>Degree</h3>
+            <div class="degree">
+              <h4>Bachelor's degree in Computer Engineering</h4>
+              <p>Pontifical Catholic University of Minas Gerais (PUC Minas), Brazil · 2008 – 2017</p>
+            </div>
+          </div>
+
+          <div>
+            <h3>Awards</h3>
+            <ul class="plain-list">
+              <li><span class="year">2011</span><div><h4>Academic Excellence Award</h4><p>Computer Engineering, PUC Minas — first semester.</p></div></li>
+              <li><span class="year">2009</span><div><h4>ACM ICPC</h4><p>International Collegiate Programming Contest — Brazilian National Finals.</p></div></li>
+              <li><span class="year">2008</span><div><h4>Academic Excellence Award</h4><p>Computer Engineering, PUC Minas — second semester.</p></div></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Additional training</h3>
+            <ul class="plain-list">
+              <li><span class="year">2019</span><div><h4>Lean Six Sigma Yellow Belt</h4><p>Process modeling training (8 hours).</p></div></li>
+              <li><span class="year">2009</span><div><h4>Students to Business Program</h4><p>Web development with ASP.NET at the Microsoft Innovation Center (94 hours).</p></div></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Languages</h3>
+            <ul class="plain-list">
+              <li><span class="year" aria-hidden="true">PT</span><div><h4>Portuguese</h4><p>Native.</p></div></li>
+              <li><span class="year" aria-hidden="true">EN</span><div><h4>English</h4><p>Advanced reading and writing; intermediate speaking.</p></div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact ---------------------------------------------------------- -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title">Let's talk</h2>
+          <p>For opportunities, projects or technical conversations, these are the most direct channels.</p>
+        </div>
+        <ul class="contact-list">
+          <li><a href="mailto:matheusneder@gmail.com"><svg class="icon" aria-hidden="true"><use href="../assets/icons/icons.svg#mail"/></svg><span class="label">Email</span><span class="value">matheusneder@gmail.com</span></a></li>
+          <li><a href="https://wa.me/5531991694226" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="../assets/icons/icons.svg#whatsapp"/></svg><span class="label">Phone / WhatsApp</span><span class="value">+55 31 99169-4226</span></a></li>
+          <li><a href="https://www.linkedin.com/in/matheus-neder-66b16a16/" target="_blank" rel="me noopener"><svg class="icon" aria-hidden="true"><use href="../assets/icons/icons.svg#linkedin"/></svg><span class="label">LinkedIn</span><span class="value">matheus-neder-66b16a16</span></a></li>
+          <li><a href="https://github.com/matheusneder" target="_blank" rel="me noopener"><svg class="icon" aria-hidden="true"><use href="../assets/icons/icons.svg#github"/></svg><span class="label">GitHub</span><span class="value">matheusneder</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Personal interests ----------------------------------------------- -->
+    <section class="section section-personal" id="music" aria-labelledby="music-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Outside work</p>
+          <h2 id="music-title">Music</h2>
+        </div>
+        <div class="music">
+          <div class="music-text">
+            <p>Away from technology, I play guitar. In 2011 I started posting instrumental compositions online, and that led to <strong>Neder &amp; Gray</strong>: a collaboration with English singer and lyricist Johnny Gray, who wrote lyrics and vocal melodies over my tracks.</p>
+            <p>The sound draws on 1970s rock and hard rock, with heavier, more saturated guitars. We recorded remotely — guitars and bass on my side in Belo Horizonte, Johnny's vocals in Leeds, England — trading files over the internet. Gary Moore, Steve Vai, Joe Satriani and Zakk Wylde are among my influences.</p>
+            <ul class="music-links">
+              <li><a class="btn btn-ghost" href="https://open.spotify.com/artist/2ZB9z4Bkj3iEiXHX3ApvSk" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="../assets/icons/icons.svg#spotify"/></svg>Spotify</a></li>
+              <li><a class="btn btn-ghost" href="https://www.youtube.com/nederandgray" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="../assets/icons/icons.svg#youtube"/></svg>YouTube</a></li>
+              <li><a class="btn btn-ghost" href="https://whiplash.net/materias/biografias/173452-nederandgray.html" target="_blank" rel="noopener" hreflang="pt-BR">Whiplash.Net article (2013, in Portuguese)</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="video">
+              <img src="../assets/images/video-theres-only-one-thing-on-my-mind.webp" width="640" height="360" alt="" loading="lazy" decoding="async">
+              <a class="video-play" href="https://www.youtube.com/watch?v=l0gKuDb0F-w" target="_blank" rel="noopener"
+                 data-video-id="l0gKuDb0F-w" data-video-title="Neder &amp; Gray — There's Only One Thing On My Mind">
+                <span class="play-badge"><svg class="icon" aria-hidden="true"><use href="../assets/icons/icons.svg#play"/></svg></span>
+                <span class="video-caption">Play video: Neder &amp; Gray — “There's Only One Thing On My Mind” (2013)</span>
+              </a>
+            </div>
+            <p class="video-note">The video only loads from YouTube when you click it.</p>
+            <div class="music-gallery">
+              <figure>
+                <img src="../assets/images/neder-and-gray-driving-all-through-the-night.webp" width="480" height="480" alt="Illustrated Neder &amp; Gray cover for “Driving All Through the Night”: a classic car at night under a street light" loading="lazy" decoding="async">
+                <figcaption>“Driving All Through the Night”</figcaption>
+              </figure>
+              <figure>
+                <img src="../assets/images/neder-and-gray.webp" width="480" height="480" alt="Black-and-white Neder &amp; Gray artwork: the two musicians in the studio, one of them holding a guitar" loading="lazy" decoding="async">
+                <figcaption>Neder &amp; Gray</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Matheus Neder</p>
+      <p>Static site — no cookies, no tracking. <a href="#top">Back to top</a></p>
+    </div>
+  </footer>
+</body>
+</html>

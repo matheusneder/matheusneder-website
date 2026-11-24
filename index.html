@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    /* Language selection on the main URL:
+       1. a language chosen earlier with the language switcher (localStorage "lang");
+       2. otherwise the first Portuguese or English entry in the browser's language list;
+       3. otherwise English. Without JavaScript, the links below are shown instead. */
+    (function () {
+      var lang = null;
+      try { lang = localStorage.getItem("lang"); } catch (e) {}
+      if (lang !== "pt-br" && lang !== "en") {
+        lang = "en";
+        var prefs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ""];
+        for (var i = 0; i < prefs.length; i++) {
+          var l = String(prefs[i]).toLowerCase();
+          if (l.indexOf("pt") === 0) { lang = "pt-br"; break; }
+          if (l.indexOf("en") === 0) { lang = "en"; break; }
+        }
+      }
+      location.replace(lang + "/" + location.hash);
+    })();
+  </script>
+  <title>Matheus Neder — Software Engineering &amp; Solutions Architecture</title>
+  <meta name="description" content="Matheus Neder — software engineering, solutions architecture and cloud. Site available in English and Brazilian Portuguese.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="canonical" href="https://matheusneder.com/">
+  <link rel="alternate" hreflang="pt-BR" href="https://matheusneder.com/pt-br/">
+  <link rel="alternate" hreflang="en" href="https://matheusneder.com/en/">
+  <link rel="alternate" hreflang="x-default" href="https://matheusneder.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Matheus Neder">
+  <meta property="og:title" content="Matheus Neder — Software Engineering &amp; Solutions Architecture">
+  <meta property="og:description" content="Software engineering, solutions architecture and cloud.">
+  <meta property="og:url" content="https://matheusneder.com/">
+  <meta property="og:image" content="https://matheusneder.com/assets/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    .chooser { min-height: 100vh; display: grid; place-items: center; text-align: center; padding: 2rem 1.25rem; }
+    .chooser h1 { font-size: var(--fs-2xl); }
+    .chooser p { margin: 0.75rem auto 0; max-width: 40ch; color: var(--c-muted); }
+    .chooser .hero-actions { justify-content: center; }
+  </style>
+</head>
+<body>
+  <main class="chooser">
+    <div>
+      <h1>Matheus Neder</h1>
+      <p>Software engineering · Solutions architecture · Cloud</p>
+      <p lang="pt-BR">Engenharia de software · Arquitetura de soluções · Cloud</p>
+      <nav class="hero-actions" aria-label="Language / Idioma">
+        <a class="btn btn-primary" href="en/" hreflang="en" lang="en">English</a>
+        <a class="btn btn-ghost" href="pt-br/" hreflang="pt-BR" lang="pt-BR">Português</a>
+      </nav>
+    </div>
+  </main>
+</body>
+</html>
