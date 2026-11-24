@@ -38,11 +38,35 @@ Depois, acesse `http://localhost:8080/` (a raiz redireciona para `/pt-br/` ou `/
 
 Basta publicar a pasta inteira como site estático, na raiz do domínio. Não há etapa de build.
 
-- **GitHub Pages:** em *Settings → Pages*, publique a partir da branch e da pasta raiz (`/`). Para domínio próprio, configure o domínio em *Settings → Pages* (o GitHub cria o arquivo `CNAME`) e os registros DNS indicados na documentação do GitHub. O `404.html` é usado automaticamente.
+- **GitHub Pages (configuração atual):** o workflow `.github/workflows/pages.yml` valida o site (`scripts/check_site.py`) em todo push e pull request e, em push na `master`, publica no GitHub Pages. Veja a seção abaixo.
 - **Cloudflare Pages / Netlify:** crie o projeto apontando para o repositório, sem comando de build e com diretório de saída `/` (raiz). O `404.html` também é reconhecido automaticamente.
 - **Servidor web convencional (Nginx, Apache etc.):** copie os arquivos para o *document root* e configure `404.html` como página de erro (`error_page 404 /404.html;` no Nginx, `ErrorDocument 404 /404.html` no Apache).
 
 O site pressupõe ser servido **na raiz do domínio** (a página 404 usa caminhos absolutos como `/assets/...`). As demais páginas usam caminhos relativos.
+
+### GitHub Pages e domínio próprio (GoDaddy)
+
+**1. Repositório.** Para o endereço `https://matheusneder.github.io` (site de usuário), o repositório precisa se chamar exatamente `matheusneder.github.io` (*Settings → General → Rename*). O remote local precisa ser atualizado depois: `git remote set-url origin https://github.com/matheusneder/matheusneder.github.io.git`.
+
+**2. Fonte de publicação.** Em *Settings → Pages → Build and deployment → Source*, escolha **GitHub Actions**. O primeiro push na `master` (ou *Run workflow*) publica o site.
+
+**3. DNS na GoDaddy** (*Meus produtos → DNS do matheusneder.com*). Remova os registros `A` e `CNAME` de `www` padrões de estacionamento da GoDaddy e crie:
+
+| Tipo | Nome | Valor |
+| --- | --- | --- |
+| A | `@` | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+| AAAA | `@` | `2606:50c0:8000::153` |
+| AAAA | `@` | `2606:50c0:8001::153` |
+| AAAA | `@` | `2606:50c0:8002::153` |
+| AAAA | `@` | `2606:50c0:8003::153` |
+| CNAME | `www` | `matheusneder.github.io` |
+
+Confira os IPs na [documentação do GitHub](https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site) antes de criar. Opcional e recomendado: verifique o domínio em *Settings (da conta) → Pages → Add a domain* (registro TXT) para evitar sequestro de domínio.
+
+**4. Domínio no GitHub.** O arquivo `CNAME` (com `matheusneder.com`) já vai no deploy. Em *Settings → Pages → Custom domain* confirme `matheusneder.com`, aguarde a verificação do DNS e marque **Enforce HTTPS** (o certificado leva alguns minutos). Com o domínio próprio ativo, `matheusneder.github.io` e `www.matheusneder.com` redirecionam para `https://matheusneder.com`.
 
 ## Domínio definitivo
 
