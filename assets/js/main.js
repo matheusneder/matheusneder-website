@@ -1,5 +1,5 @@
 /*
- * matheusneder.com — progressive enhancements only.
+ * matheusneder.com: progressive enhancements only.
  * Everything here is optional: content and navigation work without JavaScript.
  *   1. Theme toggle (light/dark, persisted)
  *   2. Language preference (persisted when the visitor switches language)

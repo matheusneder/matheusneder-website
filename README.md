@@ -64,14 +64,15 @@ Get-ChildItem -Recurse -Include *.html,*.xml,*.txt | ForEach-Object { (Get-Conte
 
 Cada idioma tem seu próprio documento HTML com todo o conteúdo, para que ambos sejam indexados de forma independente. **Toda alteração de conteúdo deve ser feita nos dois arquivos**, `pt-br/index.html` e `en/index.html`, que têm a mesma estrutura e a mesma ordem de seções:
 
-1. Apresentação (hero) — nome, cargo atual, resumo, perfis e três fatos-chave
-2. Sobre / About
-3. Experiência / Experience — `<ol class="timeline">`, um `<li class="job">` por cargo; cargos antigos em `.early-career`
-4. Competências / Expertise — um `<li class="card">` por área
-5. Projetos / Projects — contribuições open source, repositórios, pesquisa e palestras
-6. Formação / Education — graduação, prêmios, cursos e idiomas
-7. Contato / Contact
-8. Música / Music — seção pessoal, propositalmente discreta
+1. Apresentação (hero): nome, perfil profissional, resumo, links para LinkedIn, GitHub e e-mail, e três fatos-chave
+2. Sobre / About: inclui o nome completo (Matheus Villela Neder Issa), que também aparece na `meta description`, no rodapé e no JSON-LD (`alternateName`), para associar as buscas pelos dois nomes
+3. Experiência / Experience: `<ol class="timeline">`, um `<li class="job">` por cargo; cargos antigos em `.early-career`
+4. Competências / Expertise: um `<li class="card">` por área
+5. Projetos / Projects: contribuições open source, repositórios, pesquisa e palestras
+6. Formação / Education: graduação, prêmios, cursos e idiomas
+7. Música / Music: seção pessoal, propositalmente discreta
+
+Por decisão editorial, os textos não usam o travessão (—); prefira vírgula, dois-pontos ou parênteses.
 
 Ao alterar conteúdo, revise também:
 
@@ -114,7 +115,7 @@ Por padrão o site segue o tema do sistema operacional (`prefers-color-scheme`).
 O site renderiza sem nenhum serviço externo. As únicas requisições a terceiros acontecem **por ação do visitante**:
 
 - **YouTube (`youtube-nocookie.com`)**: o vídeo da seção de música só é carregado ao clicar na miniatura (que é local). Sem JavaScript, o clique abre o vídeo no YouTube.
-- Links externos (LinkedIn, GitHub, Spotify, YouTube, Whiplash.Net, WhatsApp) abrem em nova aba com `rel="noopener"`.
+- Links externos (LinkedIn, GitHub, Spotify, YouTube, Whiplash.Net) abrem em nova aba com `rel="noopener"`.
 
 Não há analytics, cookies, fontes de CDN nem hotlinking.
 
@@ -128,9 +129,9 @@ Não há analytics, cookies, fontes de CDN nem hotlinking.
 | `video-theres-only-one-thing-on-my-mind.webp` | Miniatura do vídeo do autor no YouTube | Material do próprio projeto musical do autor |
 | Inter | rsms/inter via Fontsource | SIL Open Font License 1.1 (`assets/fonts/OFL-inter.txt`) |
 | Source Serif 4 | Adobe via Fontsource | SIL Open Font License 1.1 (`assets/fonts/OFL-source-serif-4.txt`) |
-| Ícones de marca (GitHub, YouTube, Spotify, WhatsApp, LinkedIn) | Simple Icons | CC0 1.0; as marcas pertencem aos respectivos titulares |
+| Ícones de marca (GitHub, YouTube, Spotify, LinkedIn) | Simple Icons | CC0 1.0; as marcas pertencem aos respectivos titulares |
 | Ícones de interface (e-mail, sol, lua, seta) | Lucide | ISC |
-| Favicon, `apple-touch-icon.png`, `og-image.jpg` | Criados para este site | — |
+| Favicon, `apple-touch-icon.png`, `og-image.jpg` | Criados para este site | Não se aplica |
 
 ## Fontes do conteúdo
 

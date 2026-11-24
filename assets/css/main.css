@@ -1,5 +1,5 @@
 /* ==========================================================================
-   matheusneder.com — main stylesheet
+   matheusneder.com: main stylesheet
    1. Fonts  2. Design tokens  3. Base  4. Layout  5. Header  6. Hero
    7. Sections  8. Components  9. Music  10. Footer  11. Motion  12. Print
    ========================================================================== */
@@ -511,33 +511,7 @@ img { display: block; max-width: 100%; height: auto; }
 .icon-links a:hover { color: var(--c-text); background: var(--c-accent-bg); }
 .icon-links .icon { width: 1.25rem; height: 1.25rem; }
 
-/* Contact */
-.contact-list {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
-  gap: var(--space-3);
-}
-.contact-list a {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 0 var(--space-4);
-  align-items: center;
-  height: 100%;
-  padding: var(--space-4) var(--space-5);
-  color: var(--c-text);
-  text-decoration: none;
-  background: var(--c-surface);
-  border: 1px solid var(--c-line);
-  border-radius: var(--radius);
-  transition: border-color 0.15s var(--ease);
-}
-.contact-list a:hover { border-color: var(--c-accent); }
-.contact-list .icon { grid-row: span 2; width: 1.4rem; height: 1.4rem; color: var(--c-accent); }
-.contact-list .label { color: var(--c-muted); font-size: var(--fs-xs); letter-spacing: 0.04em; text-transform: uppercase; }
-.contact-list .value { font-size: var(--fs-sm); font-weight: 500; overflow-wrap: anywhere; }
-
-/* 9. Music (personal interests — intentionally low-key) -------------------- */
+/* 9. Music (personal interests, intentionally low-key) -------------------- */
 .section-personal { background: var(--c-surface); }
 .music {
   display: grid;
@@ -620,6 +594,6 @@ img { display: block; max-width: 100%; height: auto; }
   :root { color-scheme: light; }
   .site-header, .skip-link, .hero-actions, .section-personal, .site-footer { display: none; }
   .section { padding-block: 1.5rem; break-inside: auto; }
-  .card, .link-item, .contact-list a { border-color: #ccc; }
+  .card, .link-item { border-color: #ccc; }
   a { color: inherit; }
 }
