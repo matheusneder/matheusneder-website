@@ -32,10 +32,10 @@
     --psy-d3: light-dark(#d6409f, #f08ccf);
     --psy-d4: light-dark(#f4a259, #f6c177);
 
-    --psy-blob1: light-dark(rgb(42 157 143 / 0.15), rgb(127 196 186 / 0.10));
-    --psy-blob2: light-dark(rgb(108 99 255 / 0.11), rgb(140 120 255 / 0.12));
-    --psy-blob3: light-dark(rgb(214 64 159 / 0.09), rgb(230 90 180 / 0.08));
-    --psy-blob4: light-dark(rgb(244 162 89 / 0.12), rgb(246 193 119 / 0.06));
+    --psy-blob1: light-dark(rgb(42 157 143 / 0.10), rgb(127 196 186 / 0.07));
+    --psy-blob2: light-dark(rgb(108 99 255 / 0.07), rgb(140 120 255 / 0.08));
+    --psy-blob3: light-dark(rgb(214 64 159 / 0.06), rgb(230 90 180 / 0.05));
+    --psy-blob4: light-dark(rgb(244 162 89 / 0.08), rgb(246 193 119 / 0.04));
 
     --psy-rainbow: linear-gradient(90deg, var(--psy-d1), var(--psy-d2), var(--psy-d3), var(--psy-d4), var(--psy-d1));
   }
@@ -82,7 +82,8 @@
     position: fixed;
     inset: 0 0 auto;
     z-index: 60;
-    height: 3px;
+    height: 2px;
+    opacity: 0.75;
     pointer-events: none;
     background: var(--psy-rainbow);
     transform-origin: 0 50%;
@@ -94,7 +95,7 @@
   @supports (background-clip: text) or (-webkit-background-clip: text) {
     h1, .section-head h2 {
       background-image: linear-gradient(100deg, var(--psy-t1), var(--psy-t2), var(--psy-t3), var(--psy-t4), var(--psy-t1));
-      background-size: 250% 100%;
+      background-size: 200% 100%;
       background-position: 0% 50%;
       -webkit-background-clip: text;
       background-clip: text;
@@ -108,7 +109,7 @@
 
   /* Iridescent ring around the portrait */
   .hero-portrait {
-    padding: 4px;
+    padding: 3px;
     background: conic-gradient(from var(--psy-angle), var(--psy-d1), var(--psy-d2), var(--psy-d3), var(--psy-d4), var(--psy-d1));
   }
   .hero-portrait img { border-radius: 50%; }
@@ -157,7 +158,7 @@
   /* 3. Motion ---------------------------------------------------------------- */
   @media (prefers-reduced-motion: no-preference) {
 
-    /* Very slow hue drift of the background blobs (one swing every 40 s) */
+    /* Very slow hue drift of the background blobs (one swing every 40 s, 30 degrees) */
     body::before { animation: psy-hue 40s ease-in-out infinite alternate; }
 
     @supports (animation-timeline: scroll()) {
@@ -178,8 +179,8 @@
       /* Accent and text colours drift in hue over the whole page.
          The base values are read from main.css on <html> and rewritten on
          <body>, so main.css stays the single source of the palette.
-         Accent: same lightness and chroma, hue turns up to 50 degrees.
-         Text: barely tinted (chroma +0.006) with a hue that follows it.
+         Accent: same lightness and chroma, hue turns up to 35 degrees.
+         Text: barely tinted (chroma +0.004) with a hue that follows it.
          Checked: accent >= 6.3:1 and text >= 12:1 on every background.     */
       @supports (color: oklch(from red l c h)) {
         :root {
@@ -190,7 +191,7 @@
         }
         body {
           --c-accent: oklch(from var(--psy-accent-base) l c calc(h + var(--psy-hue)));
-          --c-text: oklch(from var(--psy-text-base) l calc(c + 0.006) calc(190 + var(--psy-hue)));
+          --c-text: oklch(from var(--psy-text-base) l calc(c + 0.004) calc(190 + var(--psy-hue)));
         }
       }
 
@@ -236,15 +237,15 @@
 
   @keyframes psy-hue {
     from { filter: hue-rotate(0deg); }
-    to   { filter: hue-rotate(50deg); }
+    to   { filter: hue-rotate(30deg); }
   }
   @keyframes psy-hue-shift {
     from { --psy-hue: 0; }
-    to   { --psy-hue: 50; }
+    to   { --psy-hue: 35; }
   }
   @keyframes psy-drift {
     from { transform: rotate(0deg) scale(1); }
-    to   { transform: rotate(40deg) scale(1.12) translateY(-4%); }
+    to   { transform: rotate(25deg) scale(1.08) translateY(-3%); }
   }
   @keyframes psy-progress {
     from { transform: scaleX(0); }
@@ -259,18 +260,18 @@
     to   { background-position: 100% 50%; }
   }
   @keyframes psy-rise {
-    from { transform: translateY(1.25rem); }
+    from { transform: translateY(0.75rem); }
     to   { transform: none; }
   }
   @keyframes psy-glow {
     0%   { opacity: 0; filter: hue-rotate(0deg); }
-    40%  { opacity: 0.9; }
-    60%  { opacity: 0.9; }
-    100% { opacity: 0; filter: hue-rotate(120deg); }
+    40%  { opacity: 0.55; }
+    60%  { opacity: 0.55; }
+    100% { opacity: 0; filter: hue-rotate(80deg); }
   }
   @keyframes psy-wash {
-    from { filter: hue-rotate(-40deg); }
-    to   { filter: hue-rotate(40deg); }
+    from { filter: hue-rotate(-25deg); }
+    to   { filter: hue-rotate(25deg); }
   }
 
   /* 4. Forced colours (Windows High Contrast): back to plain system colours */

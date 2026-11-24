@@ -110,7 +110,7 @@ Um arquivo separado, carregado depois de `main.css` em todas as páginas, acresc
 - anel colorido em volta do retrato, que gira na primeira tela;
 - cartões que sobem de leve ao entrar na tela e ganham uma borda iridescente quando estão no meio dela;
 - uma leve lavagem de cor na seção de música e sublinhado ondulado nos links ao passar o mouse.
-- as cores `--c-accent` e `--c-text` mudam de tom bem devagar ao longo da página (o destaque gira até 50° de matiz; o texto ganha só um leve tingimento). Os valores base continuam vindo de `main.css`: o arquivo os lê em `<html>` e os reescreve em `<body>` com `oklch(from …)`. O contraste foi conferido em toda a faixa (destaque ≥ 6,3:1, texto ≥ 12:1).
+- as cores `--c-accent` e `--c-text` mudam de tom bem devagar ao longo da página (o destaque gira até 35° de matiz; o texto ganha só um leve tingimento). Os valores base continuam vindo de `main.css`: o arquivo os lê em `<html>` e os reescreve em `<body>` com `oklch(from …)`. O contraste foi conferido em toda a faixa (destaque ≥ 6,3:1, texto ≥ 12:1).
 
 Os efeitos de rolagem usam `animation-timeline: scroll()` / `view()` dentro de `@supports`; navegadores sem suporte ficam com o visual estático. Os tokens `--psy-*` no início do arquivo definem as cores (com `light-dark()`, para os dois temas); as cores de texto do gradiente mantêm contraste mínimo de 4,5:1. Para suavizar, reduza a opacidade das cores `--psy-blob*` ou os ângulos dos `@keyframes`; para desligar tudo, basta remover a linha `<link rel="stylesheet" href="…/psychedelic.css">` das quatro páginas.
 
