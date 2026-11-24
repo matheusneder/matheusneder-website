@@ -95,7 +95,7 @@ Cada idioma tem seu próprio documento HTML com todo o conteúdo, para que ambos
 4. Competências / Expertise: um `<li class="card">` por área
 5. Projetos / Projects: contribuições open source, repositórios, pesquisa e palestras
 6. Formação / Education: graduação, prêmios, cursos e idiomas
-7. Música / Music: seção pessoal, propositalmente discreta
+7. Fora do trabalho / Outside work: música e voluntariado (`.music` e `.volunteer`); seção pessoal, propositalmente discreta
 
 Por decisão editorial, os textos não usam o travessão (—); prefira vírgula, dois-pontos ou parênteses.
 
@@ -178,7 +178,7 @@ Não há analytics, cookies, fontes de CDN nem hotlinking.
 - Currículo fornecido pelo autor (fonte principal de todas as informações profissionais).
 - GitHub (`github.com/matheusneder`): repositórios e pull requests citados, todos verificados como incorporados aos projetos.
 - Whiplash.Net (2013), canal do YouTube e perfil no Spotify: informações da seção de música.
-- O perfil do LinkedIn não pôde ser lido automaticamente (exige login) e não foi usado como fonte.
+- Perfil do LinkedIn (seção Voluntariado): informações do trabalho voluntário na PUC Minas.
 
 Dados pessoais do currículo que não agregam à apresentação profissional (estado civil, idade) não foram publicados.
 
