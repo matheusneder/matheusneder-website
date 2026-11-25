@@ -4,7 +4,7 @@ Registro dos perfis mantidos em nome de Matheus Neder fora deste site: o que cad
 
 **Este arquivo deve ser atualizado sempre que um perfil for criado ou editado em qualquer portal.** Registre a mudança na seção do portal e no [histórico](#histórico).
 
-> **O repositório é público.** Não registre aqui telefone, e-mail pessoal, candidaturas, pretensão salarial, preferências de vaga, dados de autoidentificação nem senhas. Registre apenas quais seções existem, de onde vem o conteúdo e como atualizar. A pasta `docs/` não é publicada no site (o workflow de deploy copia só os arquivos do site), mas fica visível no GitHub.
+> **O repositório é público.** Não registre aqui telefone, e-mail pessoal, candidaturas, pretensão salarial, preferências de vaga, visibilidade para recrutadores, empresas bloqueadas, dados de autoidentificação nem senhas. Registre apenas quais seções existem, de onde vem o conteúdo e como atualizar. A pasta `docs/` não é publicada no site (o workflow de deploy copia só os arquivos do site), mas fica visível no GitHub.
 
 ## Fonte de verdade e padrão de texto
 
@@ -19,6 +19,10 @@ Registro dos perfis mantidos em nome de Matheus Neder fora deste site: o que cad
 | --- | --- | --- | --- |
 | LinkedIn | https://www.linkedin.com/in/matheus-neder-66b16a16/ | Português (perfil principal) e inglês (perfil secundário) | 2026-11-24 |
 | MyGreenhouse | https://my.greenhouse.io/profile | Inglês | 2026-11-25 |
+| Glassdoor | https://www.glassdoor.com.br/member/profile | Português | 2026-11-25 |
+| Indeed | https://profile.indeed.com/ | Português | 2026-11-25 |
+
+Glassdoor e Indeed são da mesma empresa e compartilham o perfil: o que é editado em um aparece no outro (veja [Glassdoor e Indeed](#glassdoor-e-indeed)).
 
 ## LinkedIn
 
@@ -83,6 +87,49 @@ Candidaturas ficam no próprio portal e não são registradas aqui. O MyGreenhou
    - Campos de seleção (mês, grau, escola, disciplina, local): digite e pressione Enter. Escola e disciplina aceitam valores que não estão na lista ("Create ...").
 3. Recarregue a página e confira cada seção.
 
+## Glassdoor e Indeed
+
+O Glassdoor guarda o cabeçalho do perfil, habilidades, certificações e preferências, mas experiência, formação e resumo vêm do **Currículo Indeed** (perfil do Indeed). Os dois portais sincronizam esses dados: editar em um atualiza o outro. Tudo está em português.
+
+### O que é mantido
+
+| Seção | Onde editar | Conteúdo | Origem |
+| --- | --- | --- | --- |
+| Perfil (nome, situação, cargo, empresa e local) | Glassdoor, lápis do perfil | "Matheus Neder", trabalhando, cargo e empresa atuais (TOTVS), Belo Horizonte | Site e LinkedIn |
+| Resumo | Currículo Indeed | Resumo curto em 3ª pessoa | Hero e "Sobre" do site |
+| Experiência profissional | Currículo Indeed | 11 cargos com os textos do LinkedIn em português. Cargos que só têm o ano ficam só com o ano (o mês é opcional). CONAB e AHMG sem descrição | LinkedIn (PT) e site |
+| Escolaridade | Currículo Indeed | Graduação em Engenharia da Computação, PUC Minas, 2008 a 2017 | Site |
+| Competências | Currículo Indeed (aparece em "Habilidades e idiomas" do Glassdoor) | 27 competências do site, em português | Seção "Competências" do site |
+| Idiomas | Currículo Indeed | Português (língua materna) e inglês (avançado) | LinkedIn |
+| Certificações | Glassdoor ou Currículo Indeed | Lean Six Sigma Yellow Belt | Site |
+| Prêmios | Currículo Indeed | ACM ICPC, Fase Final Brasileira (2009); Destaque Acadêmico (jun/2011 e nov/2008) | Site e LinkedIn |
+| Links | Currículo Indeed | Este site, LinkedIn e GitHub | Links do site |
+| Preferências de vagas | Glassdoor ("Preferências de vagas") ou Indeed ("Preferências") | Preenchidas com o titular (valores não registrados aqui) | Titular |
+| Visibilidade para recrutadores e empresas bloqueadas | Glassdoor ("Busca de vagas") ou Indeed (status do recrutamento) | Definidas pelo titular (valores não registrados aqui) | Titular |
+| Telefone, endereço e dados pessoais | Currículo Indeed | Não preenchidos | |
+| Currículo em arquivo | Glassdoor ou Indeed | Nenhum enviado | |
+
+O Indeed mostra "3 informações incompletas" no currículo: são o telefone e a descrição de CONAB e AHMG, deixados em branco de propósito.
+
+### Como atualizar
+
+1. Abra o portal no Chrome com a sessão do titular.
+   - Glassdoor: menu do perfil, "Currículo e experiência", "Preferências de vagas" ou o lápis do perfil.
+   - Indeed: https://profile.indeed.com/, cartão "Currículo Indeed", menu "...", "Editar".
+2. Cuidados conhecidos:
+   - No aviso de cookies do Indeed, escolha "Recusar tudo".
+   - Cargo, empresa, local e escolaridade são campos de autocompletar: digite e escolha a sugestão. Sem sugestão adequada, Escape mantém o texto digitado.
+   - Habilidades, certificados e cargos desejados entram pelo botão "Adicionar" (Enter não adiciona). No Indeed, as sugestões de competência vêm em inglês; use o "+" para manter o texto em português.
+   - O portal normaliza alguns cargos (por exemplo, "Especialista em Engenharia De Software", com "De" maiúsculo).
+   - Antes de deixar o perfil visível para recrutadores, cadastre as empresas que não devem vê-lo em "Empresas bloqueadas". O próprio Glassdoor avisa que não garante o bloqueio.
+   - Os formulários não têm opção de notificar contatos.
+3. Recarregue "Currículo e experiência" no Glassdoor e o "Currículo Indeed" e confira.
+
+### Divergências conhecidas
+
+- Dois cargos estão traduzidos aqui e não no LinkedIn em português: "Pesquisador de Iniciação Científica" (LinkedIn: "Undergraduate Research Assistant") e "Administrador de Sistemas" (LinkedIn: "Sysadmin").
+- "Students to Business Program" (curso) não foi cadastrado.
+
 ## Outros perfis ligados ao site
 
 Referenciados pelo site, mas sem edições registradas até agora:
@@ -98,3 +145,4 @@ Referenciados pelo site, mas sem edições registradas até agora:
 | 2026-11-24 | LinkedIn | Sobre e Experiência reescritos em 3ª pessoa a partir do site, em PT e EN. Cargo AHMG / Hospital Vila da Serra adicionado; títulos alinhados ao site (webAula, CONAB, Itaú em EN, "Autônomo"). Prêmio ACM ICPC 2009 e 4 projetos adicionados |
 | 2026-11-24 | LinkedIn | Removido do Sobre (PT e EN) o parágrafo sobre o componente de SQL da TOTVS |
 | 2026-11-25 | MyGreenhouse | Perfil atualizado em inglês: About you, 11 cargos, formação, 25 competências, GitHub e site, país do telefone e localização, preferências de trabalho |
+| 2026-11-25 | Glassdoor e Indeed | Perfis preenchidos em português: cabeçalho do perfil, Currículo Indeed (resumo, 11 cargos, formação, 27 competências, idiomas, certificação, prêmios e links), preferências de vagas, visibilidade e empresas bloqueadas definidas pelo titular |

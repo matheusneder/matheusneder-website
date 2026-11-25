@@ -109,7 +109,7 @@ Ao alterar conteúdo, revise também:
 
 ### Perfis em outros portais
 
-Os perfis mantidos em outros portais (LinkedIn, MyGreenhouse) seguem o conteúdo do site. O registro do que cada um contém e de como atualizá-lo fica em [`docs/perfis.md`](docs/perfis.md); ao mudar o conteúdo do site, revise esses perfis e atualize o registro.
+Os perfis mantidos em outros portais (LinkedIn, MyGreenhouse, Glassdoor e Indeed) seguem o conteúdo do site. O registro do que cada um contém e de como atualizá-lo fica em [`docs/perfis.md`](docs/perfis.md); ao mudar o conteúdo do site, revise esses perfis e atualize o registro.
 
 ### Currículo para download
 
