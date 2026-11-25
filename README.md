@@ -15,6 +15,7 @@ O site é **100% estático**: HTML5 semântico, CSS e JavaScript puro. Não há 
 ├── favicon.svg
 ├── robots.txt
 ├── sitemap.xml           Com alternates hreflang
+├── docs/perfis.md        Perfis mantidos em outros portais (não publicado no site)
 └── assets/
     ├── css/main.css      Todo o estilo; tokens de design no topo (variáveis CSS)
     ├── css/psychedelic.css  Camada opcional de efeitos psicodélicos leves (cores e rolagem)
@@ -105,6 +106,10 @@ Ao alterar conteúdo, revise também:
 - o bloco JSON-LD (`jobTitle`, `worksFor`, `knowsAbout`, `award`, `sameAs`, `dateModified`);
 - `lastmod` em `sitemap.xml`;
 - o ano no rodapé.
+
+### Perfis em outros portais
+
+Os perfis mantidos em outros portais (LinkedIn, MyGreenhouse) seguem o conteúdo do site. O registro do que cada um contém e de como atualizá-lo fica em [`docs/perfis.md`](docs/perfis.md); ao mudar o conteúdo do site, revise esses perfis e atualize o registro.
 
 ### Currículo para download
 
