@@ -2,7 +2,7 @@
 
 Site pessoal e profissional de **Matheus Neder** (Matheus Villela Neder Issa): portfólio e extensão do currículo, em português do Brasil e inglês.
 
-O site é **100% estático**: HTML5 semântico, CSS e JavaScript puro. Não há framework, dependências, build, backend, banco de dados, cookies nem rastreamento.
+O site é **100% estático**: HTML5 semântico, CSS e JavaScript puro. Não há framework, dependências, backend, banco de dados, cookies nem rastreamento. A única etapa de build gera os PDFs do currículo no deploy (veja [Currículo](#currículo-cv)).
 
 ## Estrutura
 
@@ -16,6 +16,8 @@ O site é **100% estático**: HTML5 semântico, CSS e JavaScript puro. Não há 
 ├── robots.txt
 ├── sitemap.xml           Com alternates hreflang
 ├── docs/perfis.md        Perfis mantidos em outros portais (não publicado no site)
+├── cv/                   Currículos em Markdown (pt e en), publicados com os PDFs em /cv/
+├── scripts/              check_site.py (validação) e build_cv.py (PDFs e listagem de /cv/)
 └── assets/
     ├── css/main.css      Todo o estilo; tokens de design no topo (variáveis CSS)
     ├── css/psychedelic.css  Camada opcional de efeitos psicodélicos leves (cores e rolagem)
@@ -37,9 +39,9 @@ Depois, acesse `http://localhost:8080/` (a raiz redireciona para `/pt-br/` ou `/
 
 ## Publicação
 
-Basta publicar a pasta inteira como site estático, na raiz do domínio. Não há etapa de build.
+Basta publicar a pasta inteira como site estático, na raiz do domínio. A única etapa de build gera a pasta `/cv/` (veja [Currículo](#currículo-cv)); sem ela, `/cv/` publica só os arquivos Markdown, sem PDFs nem listagem.
 
-- **GitHub Pages (configuração atual):** o workflow `.github/workflows/pages.yml` valida o site (`scripts/check_site.py`) em todo push e pull request e, em push na `master`, publica no GitHub Pages. Veja a seção abaixo.
+- **GitHub Pages (configuração atual):** o workflow `.github/workflows/pages.yml` valida o site (`scripts/check_site.py`) e gera a pasta `/cv/` em todo push e pull request e, em push na `master`, publica no GitHub Pages. Veja a seção abaixo.
 - **Cloudflare Pages / Netlify:** crie o projeto apontando para o repositório, sem comando de build e com diretório de saída `/` (raiz). O `404.html` também é reconhecido automaticamente.
 - **Servidor web convencional (Nginx, Apache etc.):** copie os arquivos para o *document root* e configure `404.html` como página de erro (`error_page 404 /404.html;` no Nginx, `ErrorDocument 404 /404.html` no Apache).
 
@@ -105,19 +107,40 @@ Ao alterar conteúdo, revise também:
 - `<title>`, `meta description` e `og:*` no `<head>` de cada idioma;
 - o bloco JSON-LD (`jobTitle`, `worksFor`, `knowsAbout`, `award`, `sameAs`, `dateModified`);
 - `lastmod` em `sitemap.xml`;
-- o ano no rodapé.
+- o ano no rodapé;
+- os currículos em `cv/`, nos dois idiomas (veja [Currículo](#currículo-cv)).
 
 ### Perfis em outros portais
 
 Os perfis mantidos em outros portais (LinkedIn, MyGreenhouse, Glassdoor e Indeed) seguem o conteúdo do site. O registro do que cada um contém e de como atualizá-lo fica em [`docs/perfis.md`](docs/perfis.md); ao mudar o conteúdo do site, revise esses perfis e atualize o registro.
 
-### Currículo para download
+### Currículo (`/cv/`)
 
-O currículo fornecido contém dados pessoais (estado civil, idade, telefone) e não há uma versão em PDF preparada para publicação, por isso o site não oferece download. Para incluir: coloque o arquivo em `assets/documents/` (por exemplo `matheus-neder-cv-pt.pdf` e `matheus-neder-cv-en.pdf`) e adicione um botão em `.hero-actions` de cada idioma:
+Os currículos ficam em [`cv/`](cv/), em Markdown, um por idioma: `matheusneder-cv-pt.md` e `matheusissa-cv-en.md`. Eles são a fonte única; os PDFs não ficam no repositório, são gerados no deploy.
 
-```html
-<a class="btn btn-ghost" href="../assets/documents/matheus-neder-cv-pt.pdf" download>Baixar currículo (PDF)</a>
+Como o repositório e a pasta `/cv/` são públicos, os currículos não trazem estado civil nem idade (o telefone está incluído). Ao atualizá-los a partir de outra versão, mantenha esses dados de fora.
+
+No workflow, `scripts/build_cv.py` monta a pasta `_site/cv/` com:
+
+- uma cópia de cada `.md`;
+- um PDF de cada um (mesmo nome, extensão `.pdf`), em A4, impresso pelo Chrome headless (já instalado no runner do GitHub) com as fontes e a cor de destaque do site. As fontes variáveis são convertidas em pesos estáticos antes da impressão: o Chrome embute fontes variáveis como contornos (Type3), o que atrapalha a extração de texto pelos sistemas de recrutamento (ATS);
+- um `index.html` com a listagem da pasta, porque o GitHub Pages não lista diretórios.
+
+O resultado fica em `https://matheusneder.com/cv/`. **O site não tem links para essa pasta**, que também não está no `sitemap.xml`: o endereço é para ser enviado diretamente. Em pull requests, os arquivos gerados podem ser baixados no artefato `cv` da execução do workflow.
+
+O estilo do PDF pressupõe a estrutura atual dos arquivos: `#` com o nome, seguido da lista de contatos; `##` para as seções; `###` para cada cargo, seguido de uma linha em negrito com empresa e período.
+
+Para gerar localmente (Python 3 e Chrome, Chromium ou Edge; a variável de ambiente `CHROME` aponta outro executável):
+
+```powershell
+python -m pip install -r scripts/requirements-cv.txt
 ```
+
+```powershell
+python scripts/build_cv.py
+```
+
+A saída vai para `_site/cv/` (ignorada pelo git); outro destino pode ser passado como argumento.
 
 ## Identidade visual
 
