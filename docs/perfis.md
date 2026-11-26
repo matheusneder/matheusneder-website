@@ -9,6 +9,7 @@ Registro dos perfis mantidos em nome de Matheus Neder fora deste site: o que cad
 ## Fonte de verdade e padrão de texto
 
 - O conteúdo profissional vem deste site: [`pt-br/index.html`](../pt-br/index.html) e [`en/index.html`](../en/index.html). Ao mudar o site, revise os perfis abaixo; ao mudar um perfil, verifique se o site também precisa mudar.
+- Os currículos em [`cv/`](../cv/) (`matheusneder-cv-pt.md` e `matheusissa-cv-en.md`, publicados em `/cv/` junto com os PDFs gerados no deploy) fazem parte do mesmo conjunto. **Ao ajustar informações do site ou de qualquer perfil documentado aqui, leia também os dois arquivos e atualize-os**, nos dois idiomas. Eles mantêm o estilo próprio (primeira pessoa) e não trazem estado civil nem idade (veja [Currículo](../README.md#currículo-cv) no README).
 - Textos em **terceira pessoa** ("Matheus..."), linguagem simples, humanizada e profissional, como no site.
 - Sem travessão (—); use vírgula, dois-pontos ou parênteses.
 - Quando o portal tem versões em português e inglês, as duas devem dizer a mesma coisa.
