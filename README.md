@@ -116,7 +116,7 @@ Os perfis mantidos em outros portais (LinkedIn, MyGreenhouse, Glassdoor e Indeed
 
 ### Currículo (`/cv/`)
 
-Os currículos ficam em [`cv/`](cv/), em Markdown, um por idioma: `matheusneder-cv-pt.md` e `matheusissa-cv-en.md`. Eles são a fonte única; os PDFs não ficam no repositório, são gerados no deploy.
+Os currículos ficam em [`cv/`](cv/), em Markdown, um por idioma: `matheusneder-cv-pt.md` e `matheusneder-cv-en.md`. Eles são a fonte única; os PDFs não ficam no repositório, são gerados no deploy.
 
 Como o repositório e a pasta `/cv/` são públicos, os currículos não trazem estado civil nem idade (o telefone está incluído). Ao atualizá-los a partir de outra versão, mantenha esses dados de fora.
 
