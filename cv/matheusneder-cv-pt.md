@@ -132,7 +132,7 @@ Essa experiência consolidou minha base em infraestrutura Linux, automação de 
 
 ## Formação acadêmica
 
-**Engenharia de Computação - PUC Minas | 2008 - 2017**
+**Engenharia de Computação - PUC Minas | 2008 - 2020**
 
 ## Prêmios
 

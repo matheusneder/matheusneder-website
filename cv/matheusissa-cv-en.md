@@ -132,7 +132,7 @@ This experience established a strong foundation in Linux infrastructure, task au
 
 ## Education
 
-**Computer Engineering - PUC Minas | 2008 - 2017**
+**Computer Engineering - PUC Minas | 2008 - 2020**
 
 ## Awards
 
