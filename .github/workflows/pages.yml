@@ -31,11 +31,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
       - name: Assemble publishable files
         run: |
           mkdir _site
           cp -r index.html 404.html favicon.svg robots.txt sitemap.xml CNAME assets en pt-br _site/
           touch _site/.nojekyll
+      # /cv/: the Markdown CVs, their PDFs (headless Chrome, preinstalled on
+      # the runner) and an index.html listing the folder. Not linked from the site.
+      - name: Build CV (Markdown, PDF and folder listing)
+        run: |
+          python -m pip install -r scripts/requirements-cv.txt
+          python scripts/build_cv.py _site/cv
+      - name: Keep the CV files for review
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv
+          path: _site/cv
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
