@@ -18,10 +18,10 @@ Registro dos perfis mantidos em nome de Matheus Neder fora deste site: o que cad
 
 | Portal | Endereço | Idiomas | Última atualização |
 | --- | --- | --- | --- |
-| LinkedIn | https://www.linkedin.com/in/matheus-neder-66b16a16/ | Português (perfil principal) e inglês (perfil secundário) | 2026-11-24 |
-| MyGreenhouse | https://my.greenhouse.io/profile | Inglês | 2026-11-25 |
-| Glassdoor | https://www.glassdoor.com.br/member/profile | Português | 2026-11-25 |
-| Indeed | https://profile.indeed.com/ | Português | 2026-11-25 |
+| LinkedIn | https://www.linkedin.com/in/matheus-neder-66b16a16/ | Português (perfil principal) e inglês (perfil secundário) | 2026-11-26 |
+| MyGreenhouse | https://my.greenhouse.io/profile | Inglês | 2026-11-26 |
+| Glassdoor | https://www.glassdoor.com.br/member/profile | Português | 2026-11-26 |
+| Indeed | https://profile.indeed.com/ | Português | 2026-11-26 |
 
 Glassdoor e Indeed são da mesma empresa e compartilham o perfil: o que é editado em um aparece no outro (veja [Glassdoor e Indeed](#glassdoor-e-indeed)).
 
@@ -37,7 +37,8 @@ Glassdoor e Indeed são da mesma empresa e compartilham o perfil: o que é edita
 | Projetos | 3 antigos da webAula + Kubernetes/Fluentd (jan/2020), documentação do Kubernetes (set/2018), Prism (mai/2017) e palestra Docker e Kubernetes (2018), com link do GitHub na descrição | Só PT (o LinkedIn não traduz esta seção) | Seção "Projetos" do site; datas dos PRs vindas do GitHub |
 | Reconhecimentos e prêmios | Destaque Acadêmico (2008 e 2011) e ACM ICPC, Fase Final Brasileira (2009, sem mês: o LinkedIn exibe "jan. de 2009") | Só PT | Seção "Formação" do site |
 | Voluntariado | Teacher, PUC Minas, 2013 até hoje, causa Educação | Texto em inglês, também no perfil principal (o LinkedIn não traduz esta seção) | Fonte da seção "Voluntariado" do site |
-| Formação, licenças, cursos, competências, idiomas, recomendações | Não alterados | | |
+| Formação acadêmica | Bachelor of Engineering (BEng), Computer Engineering, PUC Minas, 2008 a 2020 (só os anos, sem mês) | PT e EN (as datas são as mesmas nas duas versões) | Seção "Formação" do site |
+| Licenças, cursos, competências, idiomas, recomendações | Não alterados | | |
 
 Cargos em "Experiência" com só o ano (sem mês): webAula, CONAB, PUC Minas (pesquisa), AHMG / Hospital Vila da Serra, Programador e Sysadmin (autônomo) e Editor de Vídeo.
 
@@ -50,6 +51,7 @@ Cargos em "Experiência" com só o ano (sem mês): webAula, CONAB, PUC Minas (pe
    - **Cargos com só o ano:** ao salvar o formulário (em PT ou EN), o LinkedIn preenche o mês com o mês atual. Depois de salvar, reabra o cargo no formulário em português, volte "Mês de início" e "Mês de término" para "Month" e salve de novo.
    - **Cargo novo:** o formulário vem com "Trabalho aqui atualmente" marcado e, no fim, "Atualizar título do perfil" apontando para o novo cargo. Desmarque o primeiro se o cargo não for atual, não marque "Encerrar cargo atual" e mantenha o título atual.
    - **Formulários em inglês:** a digitação às vezes perde caracteres. Confira o texto salvo.
+   - **Formação acadêmica:** ao salvar, o LinkedIn sugere compartilhar a atualização e depois conectar com pessoas da instituição. Clique em "Ignorar" e em "Pular". Diferente dos cargos, a formação com só o ano continua sem mês depois de salva.
 5. Confira o resultado em `/details/experience/` (PT) e `/details/experience/?locale=en-US` (EN).
 
 ### Divergências conhecidas
@@ -66,7 +68,7 @@ Cargos em "Experiência" com só o ano (sem mês): webAula, CONAB, PUC Minas (pe
 | --- | --- | --- |
 | About you | Resumo em 3ª pessoa (até 500 caracteres) | Hero e "Sobre" do site |
 | Employment | 11 cargos, espelhando a versão em inglês do LinkedIn, com resumo em cada um (exceto CONAB e AHMG, que não têm descrição) | LinkedIn (EN) e site |
-| Education | Bachelor's Degree em Computer Engineering (PUC Minas, 2008 a 2017); Lean Six Sigma Yellow Belt (THOTH Consultoria, 2019); Students to Business Program (Microsoft Innovation Center, 2009) | Site e LinkedIn |
+| Education | Bachelor's Degree em Computer Engineering (PUC Minas, 2008 a 2020); Lean Six Sigma Yellow Belt (THOTH Consultoria, 2019); Students to Business Program (Microsoft Innovation Center, 2009) | Site e LinkedIn |
 | Skills | 25 competências (limite do portal): arquitetura de software e de soluções, microsserviços, sistemas distribuídos, arquitetura orientada a eventos, modernização de legados, DDD, TDD, Apache Kafka, OpenTelemetry, AWS, GCP, Azure, Kubernetes, Terraform, C#, .NET, Java, Go, Python, SQL Server, PostgreSQL, Oracle Database, Linux e IA aplicada à engenharia de software | Seção "Competências" do site |
 | Resume | PDF antigo em português, anterior a estas atualizações | Enviado pelo titular |
 | Contact info | Nome, telefone e localização (valores não registrados aqui) | Titular |
@@ -99,7 +101,7 @@ O Glassdoor guarda o cabeçalho do perfil, habilidades, certificações e prefer
 | Perfil (nome, situação, cargo, empresa e local) | Glassdoor, lápis do perfil | "Matheus Neder", trabalhando, cargo e empresa atuais (TOTVS), Belo Horizonte | Site e LinkedIn |
 | Resumo | Currículo Indeed | Resumo curto em 3ª pessoa | Hero e "Sobre" do site |
 | Experiência profissional | Currículo Indeed | 11 cargos com os textos do LinkedIn em português. Cargos que só têm o ano ficam só com o ano (o mês é opcional). CONAB e AHMG sem descrição | LinkedIn (PT) e site |
-| Escolaridade | Currículo Indeed | Graduação em Engenharia da Computação, PUC Minas, 2008 a 2017 | Site |
+| Escolaridade | Currículo Indeed | Graduação em Engenharia da Computação, PUC Minas, 2008 a 2020 | Site |
 | Competências | Currículo Indeed (aparece em "Habilidades e idiomas" do Glassdoor) | 27 competências do site, em português | Seção "Competências" do site |
 | Idiomas | Currículo Indeed | Português (língua materna) e inglês (avançado) | LinkedIn |
 | Certificações | Glassdoor ou Currículo Indeed | Lean Six Sigma Yellow Belt | Site |
@@ -147,3 +149,4 @@ Referenciados pelo site, mas sem edições registradas até agora:
 | 2026-11-24 | LinkedIn | Removido do Sobre (PT e EN) o parágrafo sobre o componente de SQL da TOTVS |
 | 2026-11-25 | MyGreenhouse | Perfil atualizado em inglês: About you, 11 cargos, formação, 25 competências, GitHub e site, país do telefone e localização, preferências de trabalho |
 | 2026-11-25 | Glassdoor e Indeed | Perfis preenchidos em português: cabeçalho do perfil, Currículo Indeed (resumo, 11 cargos, formação, 27 competências, idiomas, certificação, prêmios e links), preferências de vagas, visibilidade e empresas bloqueadas definidas pelo titular |
+| 2026-11-26 | LinkedIn, MyGreenhouse, Glassdoor e Indeed | Ano de conclusão de Engenharia de Computação (PUC Minas) corrigido de 2017 para 2020, também no site e nos currículos |
